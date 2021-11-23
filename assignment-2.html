@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment-2</title>
+        <style></style>
+    </head>
+    <body>
+        <header><h1>Assignment-2</h1></header>
+        <main>
+            <section>
+                <div id="root"></div>
+            </section>
+        </main>
+        <script>
+            let shapes = [
+                "circle",
+                "triangle",
+                "square",
+                "rectangle",
+                "parallelogram",
+            ]
+            /*need some help in this part*/
+
+            // const valueChecker = (...sides) => {
+            //     return sides
+            //         .map((side) => {
+            //             boolean(side)
+            //         })
+            //         .includes(false)
+            //         ? false
+            //         : true
+            // }
+            const circleArea = () => {
+                let radius = Number(prompt("Enter the radius of the circle"))
+                return Math.PI * Math.pow(radius, 2)
+            }
+            const triangleArea = () => {
+                let firstSide = Number(
+                    prompt("Enter the length of first side of triangle")
+                )
+                let secondSide = Number(
+                    prompt("Enter the length of second side of triangle")
+                )
+                let thirdSide = Number(
+                    prompt("Enter the length of third side of triangle")
+                )
+                let s = firstSide + secondSide + thirdSide
+                return Math.sqrt(
+                    s * (s - firstSide) * (s - secondSide) * (s - thirdSide)
+                )
+            }
+            const squareArea = () => {
+                length = Number(prompt("Enter the length of the square"))
+                return Math.pow(length, 2)
+            }
+            const rectangleArea = () => {
+                length = Number(prompt("Enter the length of the rectangle"))
+                breadth = Number(prompt("Enter the breadth of the rectangle"))
+                return length * breadth
+            }
+            const parallelogramArea = () => {
+                height = Number(prompt("Enter the height of the parallelogram"))
+                base = Number(prompt("Enter the base of the parallelogram"))
+
+                return base * height
+            }
+            let shapeName = prompt(
+                "Enter the name of the shape [circle,triangle,square,rectangle,parallelogram]"
+            )
+            let result = 0
+            let resultShapeName = ""
+
+            switch (shapeName) {
+                case shapes[0]:
+                    result = circleArea()
+                    resultShapeName = shapes[0]
+                    break
+
+                case shapes[1]:
+                    result = triangleArea()
+                    resultShapeName = shapes[1]
+                    break
+
+                case shapes[2]:
+                    result = squareArea()
+                    resultShapeName = shapes[2]
+                    break
+                case shapes[3]:
+                    result = rectangleArea()
+                    resultShapeName = shapes[3]
+                    break
+                case shapes[4]:
+                    result = parallelogramArea()
+                    resultShapeName = shapes[4]
+                    break
+                default:
+                    alert(
+                        "The shape is not present now in the given code\nPlease Input the shapes only listed in the given prompt value"
+                    )
+            }
+            alert(`The area of ${resultShapeName}: ${result.toFixed(2)}`)
+        </script>
+    </body>
+</html>
